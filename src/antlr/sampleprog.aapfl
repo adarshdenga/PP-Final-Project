@@ -1,0 +1,80 @@
+def whileloop :: int (n::int, limit::int) {
+    while (n < limit) {
+        n++;
+        let x = 0 :: int;
+    };
+    let x = 0 :: int;
+    return n;
+};
+
+def forloop :: int (n::int, limit::int) {
+    let x = 10::int;
+    for (let i = x ::int; i < limit; i++) {
+        n++;
+        let limit = True :: bool;
+        limit = limit and True;
+    };
+    return n;
+};
+
+//test
+
+def multbyadd :: void (n::int, m::int) { // this should work
+    let x = n::int;
+    let j = 0 :: int;
+    for (let i = 0::int ; i < m; x++) {
+        x+=1;
+        let j = 0 :: int;
+    };
+    j = 1;
+};
+
+/*
+does this work?
+*/
+/*
+def append :: Arr[int] (n::int, arr::Arr[int]) {
+    let newarr = [n]::Arr[int];
+    return arr + newarr;
+};
+*/
+def appendbool :: Arr[bool] (n::bool, arr::Arr[bool]) {
+    let newarr = [n]::Arr[bool];
+    return arr + newarr;
+};
+
+
+def main :: void () {
+    let x = 3::int;
+    
+    let squared = x^2::int;
+    let alsosquared = x::int;
+    alsosquared**;
+    let res::bool;
+
+    if (True) {
+        res = True;
+    };
+
+    if (((squared == alsosquared) and (3 == 3)) and (True == True)) {
+        res = True;
+    } else {
+        res = False;
+    };
+
+    multbyadd(2, 3);
+
+    whileloop(2, 3);
+    let y = whileloop(2,3)::int;
+
+    whileloop(x, squared);
+    let z = whileloop(squared, alsosquared)::int;
+
+    let v = (1+2) + (2+3)::int;
+    let w = (True and False) and (True and False)::bool;
+
+    let u = 1 + 2 + 3 + 4::int;
+    let t = True and True and True::bool;
+
+    let s = ((1 + 1) == (2+2)) and True::bool;
+};

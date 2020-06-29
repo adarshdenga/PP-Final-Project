@@ -1,0 +1,16 @@
+def add :: void (x :: int, y :: int) {
+    let b = 2 :: int;
+    x = x + y - b;
+};
+
+def sub :: void (x :: int, y :: int) {
+    x = x - y;
+};
+
+def main :: void () {
+    let x = 1 :: int;
+    let y = 2 :: int;
+    fork add (x, y);
+    fork sub (x, y);
+    join;
+};

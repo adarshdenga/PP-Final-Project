@@ -1,0 +1,75 @@
+/* should return 3 errors:
+    - main method must return type void
+    - nonvoid method doesnt have a return
+    - main method cant have args
+*/
+
+/*
+def main :: int (arg1::int) {
+
+}
+*/
+
+
+
+/*
+    should fail because void method has a return,
+    identifier main is in use
+*/
+/*
+def noreturntest :: void (main::int) {
+    return x;
+};
+*/
+
+
+
+/*
+    fails at lexing stage because x; isn't a valid stat.
+*/
+/*
+def badstattest :: void (x::int) {
+    x;
+};
+*/
+
+
+
+/*
+def nestedfunctiontest :: void () {
+    def huhhh :: void () {
+        // xd
+    };
+};*/
+
+
+
+/*
+    fails because a unary operator cannot be used in an assignment.
+    fails because types are mismatched.
+*/
+
+def unaryassignmenttest :: void(){
+    let x = 3 :: int;
+    let y = True :: bool;
+    let z = [True, False] :: Arr[int];
+    // x = x++;
+    x = x and z;
+};
+
+
+/*
+    Fails due to wrong assignment
+*/
+/*
+def failassignmenttest :: void () {
+    let w = True :: int;
+    let x = 1 :: bool;
+    let y = [True, False] :: Arr[int];
+    let z = [1, 2] :: Arr[bool];
+};
+*/
+
+// fails at lexing stage because it must be a function. 
+// no loose statements
+let x = 3 :: int;
